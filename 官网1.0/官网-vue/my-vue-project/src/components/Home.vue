@@ -36,8 +36,8 @@
           <div>
             <img src="/static/images/intro-1.png" alt="">
             <div>
-              <p>诉讼引导系统</p>
-              <p>功能介绍</p>
+              <p class="small-title">诉讼引导系统</p>
+              <p class="cell-intro">功能介绍</p>
             </div>
           </div>
         </div>
@@ -96,38 +96,38 @@
        <p class="info-title">我们的优势</p>
        <div class="info-cell">
           <div class="info-child">
-          <div>
-          <div class="img-container"><img src="/static/images/strength-1" alt=""></div>
+          <div class="cell-content">
+          <div class="img-container"><img src="/static/images/strength-1.png" alt=""></div>
           <p class="append-info">面向办案的全方位解决方案</p>
           </div>
         </div>
         <div class="info-child">
-         <div>
-      <img src="" alt="">
+         <div class="cell-content">
+      <img src="/static/images/strength-2.png" alt="">
       <p class="append-info">全凭平台支持(同时支持手机/电脑)</p>
     </div>
   </div>
   <div class="info-child">
-    <div>
-      <img src="" alt="">
+    <div class="cell-content">
+      <img src="/static/images/strength-3.png" alt="">
       <p class="append-info">专业全面的知识内容</p>
     </div>
   </div>
   <div class="info-child">
-    <div>
-      <img src="" alt="">
+    <div class="cell-content">
+      <img src="/static/images/strength-4.png" alt="">
       <p class="append-info">强大的的人工智能技术积累和开发能力</p>
     </div>
   </div>
   <div class="info-child">
-    <div>
-      <img src="" alt="">
+    <div class="cell-content">
+      <img src="/static/images/strength-5.png" alt="">
       <p class="append-info">两周一次的功能升级和知识升级</p>
     </div>
   </div>
   <div class="info-child">
-    <div>
-      <img src="" alt="">
+    <div class="cell-content">
+      <img src="/static/images/strength-6.png" alt=""> 
       <p class="append-info">专业全面的知识内容</p>
     </div>
   </div>
@@ -136,7 +136,7 @@
     <div class="characteristic">
        <p class="info-title">安全稳定</p>
        <p class="info-detail">安全稳定是律呗软件核心优势之一。我们采用目前最好的加密技术，对所有数据（文字、图片、语音、视频）都进行了128位不可逆加密，存储过程采取软硬结合加密、立体式防窃取、可追踪、可还原、自动备份、快速恢复等先进技术策略。系统通过MAC地址对每个帐号进行校验，每次操作过程系统始终都安全稳定。</p>
-       <img src="static/images/characristic.png" alt="" class="info-detail-img">
+       <img src="static/images/characristic-img.png" alt="" class="info-detail-img">
     </div>
     <div>
        <p class="info-title">服务支持</p>
@@ -144,22 +144,22 @@
       <div class="info-cell">
      
       <div class="service-cell">
-        <img src="" alt="">
+        <img src="/static/images/support-1.png" alt="">
         <p>在线客服</p>
         <p></p>
       </div>
       <div class="service-cell">
-        <img src="" alt="">
+        <img src="/static/images/support-2.png" alt="">
         <p>视屏教程</p>
         <p></p>
       </div>
       <div class="service-cell">
-        <img src="" alt="">
+        <img src="/static/images/support-3.png" alt="">
         <p>技术支持</p>
         <p></p>
       </div>
       <div class="service-cell">
-        <img src="" alt="">
+        <img src="/static/images/support-4.png" alt="">
         <p>行业交流群</p>
         <p></p>
       </div>
@@ -204,10 +204,12 @@ export default {
 }
 .nav {
   width: 100%;
+  height: 80px;
   position: fixed;
   top: 0px;
-  background-color: burlywood;
+  background-color: lawngreen;
   z-index: 10;
+  margin-left: 0px;
 }
 .logo img {
   position: relative;
@@ -259,6 +261,7 @@ export default {
   text-align: center;
   justify-content: center;
   padding-top: 5px;
+  margin: 0 auto;
 }
 .product-info {
   text-align: center;
@@ -272,10 +275,11 @@ export default {
   margin: 20px;
 }
 .info-child {
-  width: 300px;
+  width: 400px;
   height: 100px;
+  margin-bottom: 50px;
 }
-.info-child > div {
+.info-child .cell-content {
   height: 100px;
   width: 200px;
   margin: 0px;
@@ -283,14 +287,27 @@ export default {
 .info-child .img-container {
   height: 90px;
 }
+.cell-content p {
+  margin: 0px;
+}
 .info-child div img {
+  display: inline-block;
   width: 80px;
   height: 80px;
+  z-index: 1;
 }
-@media (max-width: 1020px) {
-  .cell {
-    width: 200px;
-  }
+.info-detail-img {
+  display: block;
+  width: 840px;
+  height: 360px;
+  margin: 0 auto;
+}
+.info-detail {
+  padding:  0 50px;
+}
+.chararistic {
+  text-align: center;
+  padding: 20px 50px;
 }
 .cell div {
   display: inline-block;
@@ -314,8 +331,11 @@ export default {
 
 .service-cell {
   width: 200px;
-  background-color: bisque;
   margin-left: 30px;
+}
+.service-cell img {
+  width: 85px;
+  height: 80px;
 }
 .partner {
   width: 200px;
@@ -341,5 +361,11 @@ export default {
   font-family: MicrosoftYaHei;
   color: rgba(255, 255, 255, 1);
   line-height: 0px;
+}
+
+@media (max-width: 1020px) {
+  .cell {
+    width: 200px;
+  }
 }
 </style>
